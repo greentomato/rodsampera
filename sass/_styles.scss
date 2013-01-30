@@ -1,0 +1,52 @@
+// Variables
+
+$bg: #222; //Background Color
+$font: 'Lato', Arial, sans-serif; //Font Family
+$font-color: #EDEDED;
+$h1-size: 7em; 
+$h2-size: $h1-size - 1;
+$h3-size: $h1-size - 3;
+$font-weight-thin: 300;
+$font-weight-content: 300;
+$rs-color: #004C66; //RS Main Color
+$span-color: lighten($rs-color, 30%); //Text <span> Color
+$panel-color: rgba(17,17,17,0.2);
+$panel-padding:40px;
+$bg-size: 300px;
+
+// Mixins
+
+@mixin fontstyle {font-family: $font; text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; color:$font-color;}
+
+@mixin em-fix {font-size:62.5%;}
+
+@mixin background-size {-webkit-background-size: $bg-size;-moz-background-size: $bg-size;-o-background-size: $bg-size;background-size: $bg-size;}
+
+// Custom CSS
+
+head{@include em-fix;}
+
+body{background-color:$bg; @include fontstyle;}
+
+h1{@include fontstyle;  font-size: $h2-size; font-weight: $font-weight-thin;}
+
+h2{@include fontstyle; font-size: $h2-size; font-weight: $font-weight-thin;}
+
+h3{@include fontstyle; font-size: $h3-size; font-weight: $font-weight-thin;}
+
+span{color: $span-color}
+
+.rs {padding: $panel-padding; margin-top:0px; margin-bottom: 30px; text-indent: -999em; min-height: 300px; background: $rs-color url(../images/rs-logo.svg) center center no-repeat; z-index: 20; position: relative;}
+
+//.rs-background {background-color: $rs-color; z-index: 10; position: relative; min-height: 300px;}
+
+.content-panel {background: $panel-color; padding: $panel-padding;}
+
+.fix-height {min-height: 633px;}
+
+.profile {min-height: 300px;
+	
+	img {max-width: 100%;}
+}
+
+.vert-center {margin-top: 5%;}
